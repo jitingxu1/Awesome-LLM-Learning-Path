@@ -30,7 +30,7 @@ class PositionalEncoding(nn.Module):
         Return
         -------
         token_embeddings + positional embeddings ``torch.Tensor``
-            Have the same shape to input            
+            Have the same shape to input 
         """
         # TODO: make embeding layer relative larger by multiplying the sqrt(self.embed_dim)
 
