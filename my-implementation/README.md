@@ -11,6 +11,26 @@ Implementing a Transformer model from scratch, despite the availability of excel
 
 In summary, implementing the Transformer by hand provides a unique opportunity for learning, customization, experimentation, problem-solving, and building a solid foundation in deep learning. It allows you to delve deeper into the model and gain practical experience that goes beyond reading papers, blogs, or watching videos.
 
+
+
+# Learning Path
+- Embeddings
+    - transfomrer learns its own embeddings
+    - we could fine tune existing embeddings, too.
+    - **Positional encoding**: why choose sin & cos
+- Multi-heads attentions
+    - self attentions
+    - learnable weights
+    - Q, K, V
+    - scaled dot-product attention
+    - multi-heads ([multi-head attention](https://peterbloem.nl/blog/transformers))
+        - Narrow heads: split original projection into n_heads
+        - wide heads: reuse each projection for each head. 
+    - residual connectin (skip connection)
+- Encoder
+- Decoder
+- Transformer
+
 # Learn transformer
 Transformer 
 # Attention is all your need
