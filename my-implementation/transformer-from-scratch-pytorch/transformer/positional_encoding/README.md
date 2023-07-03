@@ -4,7 +4,7 @@
 This is from the above blog:
 
 
-```What is positional encoding and Why do we need it in the first place?
+#### What is positional encoding and Why do we need it in the first place?
 Position and order of words are the essential parts of any language. They define the grammar and thus the actual semantics of a sentence. Recurrent Neural Networks (RNNs) inherently take the order of word into account; They parse a sentence word by word in a sequential manner. This will integrate the words’ order in the backbone of RNNs.
 
 But the Transformer architecture ditched the recurrence mechanism in favor of multi-head self-attention mechanism. Avoiding the RNNs’ method of recurrence will result in massive speed-up in the training time. And theoretically, it can capture longer dependencies in a sentence.
@@ -17,9 +17,9 @@ The first idea that might come to mind is to assign a number to each time-step w
 
 Another idea is to assign a number to each time-step linearly. That is, the first word is given “1”, the second word is given “2”, and so on. The problem with this approach is that not only the values could get quite large, but also our model can face sentences longer than the ones in training. In addition, our model may not see any sample with one specific length which would hurt generalization of our model.
 
-Ideally, the following criteria should be satisfied:
+#### Ideally, the following criteria should be satisfied:
 
-It should output a unique encoding for each time-step (word’s position in a sentence)
-Distance between any two time-steps should be consistent across sentences with different lengths.
-Our model should generalize to longer sentences without any efforts. Its values should be bounded.
-It must be deterministic.```
+- It should output a unique encoding for each time-step (word’s position in a sentence)
+- Distance between any two time-steps should be consistent across sentences with different lengths.
+- Our model should generalize to longer sentences without any efforts. Its values should be bounded.
+- It must be deterministic.
