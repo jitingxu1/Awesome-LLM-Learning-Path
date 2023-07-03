@@ -17,7 +17,7 @@ In summary, implementing the Transformer by hand provides a unique opportunity f
 - Embeddings
     - transfomrer learns its own embeddings
     - we could fine tune existing embeddings, too.
-    - **Positional encoding**: why choose sin & cos
+    - **Positional encoding**: why choose sin & cos: [ref](https://kazemnejad.com/blog/transformer_architecture_positional_encoding/)
 - Multi-heads attentions
     - self attentions
     - learnable weights
@@ -26,8 +26,8 @@ In summary, implementing the Transformer by hand provides a unique opportunity f
     - multi-heads ([multi-head attention](https://peterbloem.nl/blog/transformers))
         - Narrow heads: split original projection into n_heads
         - wide heads: reuse each projection for each head. 
-    - residual connectin (skip connection)
 - Encoder
+    - residual connectin (skip connection)
 - Decoder
 - Transformer
 
