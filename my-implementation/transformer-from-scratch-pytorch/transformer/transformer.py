@@ -2,29 +2,8 @@
 import torch
 import torch.nn as nn
 
-class TransformerEncoder(nn.Module):
-
-    def __init__(
-            self,
-            n_heads: int,
-            embed_dim: int,
-            n_layer: int,
-            ff_dim: int,
-            drop_prob: float
-            ):
-        super().__init__()
-        
-
-    def forward(self):
-        pass
-
-class TransformerDecoder(nn.Module):
-
-    def __init__(self):
-        pass
-
-    def forward(self):
-        pass
+from .encoders.encoder import TransformerEncoder
+from .decoders.decoder import TransformerDecoder
 
 class Transformer(nn.Module):
     """Transformer with self-attention mechanism"""
@@ -47,17 +26,13 @@ class Transformer(nn.Module):
         self.target_pad_idx = target_pad_idx 
         self.embed_dim = embed_dim
 
-        self.encoder = TransformerEncoder(n_heads = n_heads, 
-                                          embed_dim = embed_dim, 
+        self.encoder = TransformerEncoder(n_head = n_heads, 
+                                          d_model = embed_dim, 
                                           n_layers = n_layers,
-                                          ff_dim = ff_dim,
-                                          drop_prob = drop_prob
                                           )
-        self.decoder = TransformerDecoder(n_heads = n_heads, 
-                                          embed_dim = embed_dim, 
+        self.decoder = TransformerDecoder(n_head = n_heads, 
+                                          d_model = embed_dim, 
                                           n_layers = n_layers,
-                                          ff_dim = ff_dim,
-                                          drop_prob = drop_prob
                                           )
 
 
