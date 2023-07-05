@@ -21,13 +21,13 @@ class Encoder(nn.Module):
         self.norm2 = nn.LayerNorm(d_model, eps=1e-6)
 
 
-    def forward(self, x):
+    def forward(self, encoder_input):
         """Encoder"""
-        attention = self.multi_head_attentions(x)
-        x = self.norm1(x + attention)
-        feedforward = self.fufeedforward(x)
-        out = self.norm2(feedforward + x)
-        return out
+        contextual_output = self.multi_head_attentions(encoder_input, encoder_input, encoder_input)
+        x = self.norm1(encoder_input + contextual_output)
+        feedforward = self.feedforward(x)
+        encoder_output = self.norm2(feedforward + x)
+        return encoder_output
     
 
 class TransformerEncoder(nn.Module):
@@ -42,8 +42,9 @@ class TransformerEncoder(nn.Module):
         super().__init__()
         self.encoder_layers = nn.ModuleList([Encoder(n_head, d_model) for _ in range(n_layers)])
 
-    def forward(self, x, mask=None):
+    def forward(self, encoder_input):
         """transformer encoder block"""
         for layer in self.encoder_layers:
-            x = layer(x, mask=mask)
-        return x
+            # encoder's output will be the input for next encoder
+            encoder_input = layer(encoder_input)
+        return encoder_input
