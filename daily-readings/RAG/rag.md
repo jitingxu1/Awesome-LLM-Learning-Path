@@ -1,0 +1,2 @@
+## Blogs
+- [Fix Hallucination in Retrieval Augmented Generation AI Applications Using Schema and Output Parser](https://kelly-kang.medium.com/fix-hallucination-in-retrieval-augmented-generation-ai-applications-using-schema-and-output-parser-d58325daf1da)
