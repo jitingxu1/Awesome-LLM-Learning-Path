@@ -25,3 +25,26 @@
         - Then a function that contains a docstring is randomly selected. The code from the beginning of the file up until the end of the docstring is used as the context, and the function body is considered as the groundtruth. The rest of the file is discarded
         - static analysis need the full set of code gor error analysis. 
         - edit similarity between model generation and groundtruth, and compare against Pass@1 from HumanEval (Chen et al., 2021) which is a popular execution-base
+- [Practitioners’ Expectations on Code Completion](https://arxiv.org/pdf/2301.03846.pdf)
+    - Abstraction
+        - It aims at automatically predicting the next tokens or lines that the programmers tend to use. 
+        - A good code completion tool can substantially save keystrokes and improve the programming efficiency for programmers
+        - we perform an empirical study by first interviewing 15 practitioners and then surveying 599 practitioners from 18 IT companies about their expectations on code completion
+        - builtin tools in IDEs are far more popular than third-party plug-in completion tools such as Copilot [11] and IntelliCode [8], used by 96% and about 13% of the participants
+    - completion granularities: token level and statement level, (my word): block level or function level?
+        - On average, 81% participants adopt token-level completion, which is evidently more than those adopting statementlevel completion (only 32%). For token-level completion, 84% and 85%. participants often utilize tools to complete identifiers and recommend APIs
+        - For statementlevel completion, completing the currently edited line and predicting the API argument are the two most popular usage scenarios.
+    - RQ3: What are practitioners’ expectations on code completion tools?
+        - usage scenarios, evaluation metrics, access to service (online or offline), completion effectiveness, and efficiency
+        - Most participants (85%) expect tools to generate token level completion results within 200 milliseconds.
+        - For statement-level completion, the most expected scenarios are **skeleton completion** (predicting the skeleton of classes and methods), API argument recommendation (recommending the arguments of called APIs) and completion of currently edited line. The most favored completion latency is no more than 2 seconds
+    - most papers measure overlapped n-grams and edit similarity between completed code and human-written code, however, they are not preferred by the majority of the participants.
+    - ![code completion scenarios and satisfication](./images/code_completion_scenarios.png)
+    - ![issues](./images/issue%20of%20code%20completion.png)
+    - ![importances](./images/code%20completion%20importance.png)
+    - ![overall](./images/overall.png)
+
+
+## Better code assistant
+- Need understand useage scenarios
+- Proper training data, models, and evluation metrics. 
