@@ -1,0 +1,14 @@
+# models
+- [ZEPHYR: DIRECT DISTILLATION OF LM ALIGNMENT](https://arxiv.org/pdf/2310.16944.pdf)
+    - distilled model cannot reach teacher's perf and is not aligned.
+    - distill-DPO: The main step is to utilize AI Feedback (AIF) from an ensemble of teacher models as preference data, and apply distilled direct preference optimization as the learning objective
+    - ZEPHYR-7B, an aligned version of Mistral-7B:
+        - Distilled Supervised Fine-Tuning (dSFT) 
+            - dSFT follow the self-instruct protocol
+                - Let x be a set of seed prompts, constructed to represent a diverse set of topical domains
+                - A dataset is constructed through iterative self-prompting where the teacher is used to both respond to an instruction and refine the instruction based on the response.
+                - For each x^0, we first sample response y, and then refine by sampling a new instruction (using a prompt for refinement). 
+        - AI Feedback through Preferences (AIF)
+                - Given a prompt x, we feed this to 4 LLMs (Claude, Falcon, Llama), we will get 4 outputs, y1, ..., y4, and use GPT4 as teacher to score this 4 outputs, the final dataset will have (x, y_best, y_ranom_from_rest_of_3).
+        - Distilled Direct Preference Optimization (dDPO)
+- 
