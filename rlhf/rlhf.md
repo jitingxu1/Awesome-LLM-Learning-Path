@@ -1,4 +1,5 @@
 ## RLHF
+- [RLHF Explained](https://gist.github.com/JoaoLages/c6f2dfd13d2484aa8bb0b2d567fbf093)
 - [Illustrating Reinforcement Learning from Human Feedback (RLHF)](https://huggingface.co/blog/rlhf)
     - pretrain a Language Model
     - gathering data and train a reward model
@@ -13,4 +14,8 @@
     - key insight is to leverage an analytical mapping from reward functions to optimal policies, which enables us to transform a loss function over reward functions into a loss function over policies.
 
 ## Tools
-[A modular RL library to fine-tune language models to human preferences](https://github.com/allenai/RL4LMs)
+- [A modular RL library to fine-tune language models to human preferences](https://github.com/allenai/RL4LMs)
+- [Transformer reinforcement learning: trl repo](https://github.com/huggingface/trl/tree/main)
+    - a set of tools to train transformer language models and stable diffusion models with Reinforcement Learning, from the Supervised Fine-tuning step (SFT), Reward Modeling step (RM) to the Proximal Policy Optimization (PPO) step. The library is built on top of the transformers library by 🤗 Hugging Face. 
+        - SFTTrainer, RewardModelTraner, PPOTrainer, DPOTrainer
+
