@@ -40,3 +40,6 @@ Prefix-tuning prepends a sequence of continuous task-specific vectors to the inp
     - See similar performance compared to finetune the whole model. 
 - [P-Tuning v2](https://arxiv.org/pdf/2110.07602.pdf): appling continuous prompts for every layer of the
 pretrained model, instead of the mere input layer
+
+## Sparsity as a paradigm for LLM Dev: Less can be more 
+our understanding of the human brain, and specifically the principle of sparsity in neural connections. Neurologically, our brains are teeming with neurons, but not every neuron is interconnected with each other. There exists a system of sparse connections that selectively activate during specific tasks or thought processes. This efficient design reduces energy consumption, prevents overstimulation, and allows the brain to handle immense amounts of information with limited resources.
