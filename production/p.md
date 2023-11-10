@@ -1,3 +1,7 @@
+## [Multiquey attention](https://blog.fireworks.ai/multi-query-attention-is-all-you-need-db072e758055)
+
+## vLLM papers
+    - [Efficient Memory Management for Large Language Model Serving with PagedAttention](https://arxiv.org/pdf/2309.06180.pdf)
 ## concepts
 - Continuous Batching [Anyscale blog](https://www.anyscale.com/blog/continuous-batching-llm-inference)[todo]
     - hugging face: text-generation-inference
